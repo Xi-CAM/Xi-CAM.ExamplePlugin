@@ -11,7 +11,6 @@ class ExamplePlugin(GUIPlugin):
         # Insert code here
 
         # Modify stages here
-        self.stages = {"A": GUILayout(QLabel("1")),
-                       "B": GUILayout(QLabel("2"))}
+        self.stages = {"Stage 1": GUILayout(QLabel("Stage 1..."))}
 
         super(ExamplePlugin, self).__init__(*args, **kwargs)

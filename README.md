@@ -1,4 +1,4 @@
-# QuickStart Plugin
+# Example Plugin
 
 This repository is intended to be used as a starting point for the *QuickStart Guide* in Xi-CAM's documentation.
 

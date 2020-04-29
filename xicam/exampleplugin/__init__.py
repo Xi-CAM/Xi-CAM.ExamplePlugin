@@ -3,14 +3,15 @@ from qtpy.QtWidgets import QLabel
 from xicam.plugins import GUILayout, GUIPlugin
 
 
-class QuickStartPlugin(GUIPlugin):
+class ExamplePlugin(GUIPlugin):
     # Define the name of the plugin (how it is displayed in Xi-CAM)
-    name = "QuickStart"
+    name = "Example Plugin"
 
     def __init__(self, *args, **kwargs):
         # Insert code here
 
         # Modify stages here
-        self.stages = {'Stage 1': GUILayout(QLabel("Stage 1..."))}
+        self.stages = {"A": GUILayout(QLabel("1")),
+                       "B": GUILayout(QLabel("2"))}
 
-        super(QuickStartPlugin, self).__init__(*args, **kwargs)
+        super(ExamplePlugin, self).__init__(*args, **kwargs)

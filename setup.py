@@ -11,7 +11,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='xicam.QuickStartPlugin',
+    name='xicam.ExamplePlugin',
     version=__version__,
     description='',
     long_description=long_description,
@@ -29,6 +29,6 @@ setup(
     author_email='ihumphrey@lbl.gov',
     entry_points={
         'xicam.plugins.GUIPlugin':
-            ['quickstart_plugin = xicam.quickstart_plugin:QuickStartPlugin']
+            ['example_plugin = xicam.exampleplugin:ExamplePlugin']
     }
 )

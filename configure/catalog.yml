@@ -1,0 +1,6 @@
+sources:
+    example-catalog:
+        driver: bluesky-msgpack-catalog
+        args:
+            paths:
+                "{{ CATALOG_DIR }}/*.msgpack"

@@ -29,6 +29,11 @@ setup(
     author_email='ihumphrey@lbl.gov',
     entry_points={
         'xicam.plugins.GUIPlugin':
-            ['example_plugin = xicam.exampleplugin:ExamplePlugin']
+            ['example_plugin = xicam.exampleplugin:ExamplePlugin'],
+        'xicam.plugins.OperationPlugin':
+            [
+                'invert_operation = xicam.exampleplugin.operations:invert',
+                'random_noise_operation = xicam.exampleplugin.operations:random_noise'
+            ]
     }
 )

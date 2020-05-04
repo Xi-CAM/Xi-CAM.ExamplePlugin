@@ -10,11 +10,17 @@ from .workflows import ExampleWorkflow
 
 
 class ExamplePlugin(GUIPlugin):
+    """Derived GUIPlugin class to define our own GUIPlugin called ExamplePlugin"""
     # Define the name of the plugin (how it is displayed in Xi-CAM)
     name = "Example Plugin"
 
     def __init__(self, *args, **kwargs):
+        """Constructs the ExamplePlugin
 
+        This will set up the widgets that we want the ExamplePlugin to have,
+        the layout for the widgets (how the interface will look) in the ExamplePlugin,
+        and an example workflow.
+        """
         self._catalog_viewer = CatalogView()  # Create a widget to view the loaded catalog
         self._results_viewer = DynImageView()  # Create a widget to view the result image
 
@@ -38,8 +44,11 @@ class ExamplePlugin(GUIPlugin):
         # For classes derived from GUIPlugin, this super __init__ must occur at end
         super(ExamplePlugin, self).__init__(*args, **kwargs)
 
-    # Re-implemented from GUIPlugin - gives us access to a catalog reference
     def appendCatalog(self, catalog, **kwargs):
+        """Re-implemented from GUIPlugin - gives us access to a catalog reference
+
+        You MUST implement this method if you want to load catalog data into your GUIPlugin.
+        """
         # Set the catalog viewer's catalog, stream, and field (so it knows what to display)
         # This is a quick and simple demonstration; stream and field should NOT be hardcoded
         stream = "primary"
@@ -47,7 +56,10 @@ class ExamplePlugin(GUIPlugin):
         self._catalog_viewer.setCatalog(catalog, stream, field)
 
     def run_workflow(self):
-        """Run the internal workflow."""
+        """Run the internal workflow.
+
+        In this example, this will be called whenever the "Run Workflow" in the WorkflowEditor is clicked.
+        """
         if not self._catalog_viewer.catalog:  # Don't run if there is no data loaded in
             return
         # Use Workflow's execute method to run the workflow.
@@ -58,7 +70,10 @@ class ExamplePlugin(GUIPlugin):
                                image=self._catalog_viewer.image)
 
     def results_ready(self, *results):
-        """Update the results view widget with the processed data."""
+        """Update the results view widget with the processed data.
+
+        This is called when the workflow's execute method has finished running is operations.
+        """
         # print(results)
         # results is a tuple that will look like:
         # ({"output_name": output_value"}, ...)

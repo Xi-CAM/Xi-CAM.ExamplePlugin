@@ -11,7 +11,7 @@ def invert(image: np.ndarray, x=1) -> np.ndarray:
         max_value = np.iinfo(image.dtype).max
     else:
         max_value = np.finfo(image.dtype).max
-    return max_value - image
+    return np.subtract(max_value, image)
 
 
 @operation

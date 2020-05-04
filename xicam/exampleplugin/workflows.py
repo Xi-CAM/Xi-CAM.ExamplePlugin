@@ -1,6 +1,6 @@
 from xicam.core.execution import Workflow
 
-from ..operations import invert, random_noise
+from .operations import invert, random_noise
 
 
 class ExampleWorkflow(Workflow):

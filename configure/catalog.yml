@@ -1,6 +1,6 @@
 sources:
-    example-catalog:
+    example-catalog: # Name of the source
         driver: bluesky-msgpack-catalog
         args:
-            paths:
+            paths: # Where to find the source
                 "{{ CATALOG_DIR }}/*.msgpack"

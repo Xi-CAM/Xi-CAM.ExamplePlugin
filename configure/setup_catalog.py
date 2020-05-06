@@ -17,6 +17,8 @@ print(f"Copying catalog.yml to {catalog_path}...")
 shutil.copy("catalog.yml", catalog_path)
 
 print(f"Copying msgpack files to {catalog_path}...")
+# catalog.yml uses the {{ CATALOG_DIR }}/*.msgpack
+# this means catalogs will be search for in the directory that catalog.yml was copied to.
 msgpack_file_gen = Path.cwd().glob("*.msgpack")
 for f in msgpack_file_gen:
     print(f"\tcopying {f.name}...")

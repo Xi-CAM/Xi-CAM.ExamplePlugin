@@ -1,5 +1,5 @@
 # Here is a quick example plugin that uses Xi-CAM's CatalogView mixin
-# to open and display a catalog from the "example-catalog".
+# to open and display a catalog from the "example_catalog".
 
 from xicam.plugins import GUILayout, GUIPlugin
 from xicam.gui.widgets.dynimageview import DynImageView
